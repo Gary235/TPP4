@@ -1,0 +1,2 @@
+rootProject.name='TPP4'
+include ':app'
