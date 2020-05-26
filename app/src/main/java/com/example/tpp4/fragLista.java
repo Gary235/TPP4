@@ -1,13 +1,13 @@
 package com.example.tpp4;
 
 import android.app.Fragment;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -42,11 +42,24 @@ public class fragLista extends Fragment {
 
         adapatador = new adaptadordepeliculas(arraydepeliculas,getActivity());
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
+                Log.d("Conexion","Pos:" + position);
+
+
+
+            }
+        });
+
+
         tareaAsincronica mitarea = new tareaAsincronica();
         mitarea.execute();
 
         return vista;
     }
+
+
 
 
     private class tareaAsincronica extends AsyncTask<Void, Void, Void> {
