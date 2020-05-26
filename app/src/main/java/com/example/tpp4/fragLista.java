@@ -47,7 +47,13 @@ public class fragLista extends Fragment {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
                 Log.d("Conexion","Pos:" + position);
 
+                    String titulo;
+                    titulo = arraydepeliculas.get(position)._titulo;
 
+                    MainActivity main=(MainActivity) getActivity();
+                    main.recibirTexto(titulo);
+
+                     main.pasarADetalleFragment();
 
             }
         });
@@ -70,7 +76,7 @@ public class fragLista extends Fragment {
             try {
                 //api key: ef75b81a
                 //declaramos la url como nuestra conexión
-                URL miRuta = new URL("http://www.omdbapi.com/?apikey=ef75b81a&s=" + texto +"&limit=1");
+                URL miRuta = new URL("http://www.omdbapi.com/?apikey=ef75b81a&s=" + texto);
                 Log.d("Conexion", "Me voy a conectar");
 
 

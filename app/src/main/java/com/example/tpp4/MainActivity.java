@@ -58,4 +58,16 @@ public class MainActivity extends Activity {
         transaccionFragment.commit();
     }
 
+    public void pasarADetalleFragment()
+    {
+        Fragment fragmentDetalle;
+        fragmentDetalle = new fragDetalle();
+
+
+        transaccionFragment=adminFragment.beginTransaction();
+        transaccionFragment.replace(R.id.frameLayout, fragmentDetalle);
+        transaccionFragment.commit();
+    }
+
+
 }
