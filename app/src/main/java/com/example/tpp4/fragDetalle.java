@@ -1,6 +1,5 @@
 package com.example.tpp4;
 
-import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -62,7 +60,6 @@ public class fragDetalle extends Fragment {
 
     private class tareaAsincronica extends AsyncTask<Void, Void, Void> {
 
-        @SuppressLint("WrongThread")
         @Override
         protected Void doInBackground(Void... parametros) {
 
@@ -99,6 +96,7 @@ public class fragDetalle extends Fragment {
 
                     descargarFoto mitarea2 = new descargarFoto();
                     mitarea2.execute(url);
+
                 } else {
                     Log.d("Conexion", "Me pude conectar pero algo malo pasó");
                 }
