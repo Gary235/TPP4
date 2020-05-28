@@ -43,7 +43,7 @@ public class fragDetalle extends Fragment {
         Fecha = vista.findViewById(R.id.fechadetalle);
         Director = vista.findViewById(R.id.directordetalle);
         Plot = vista.findViewById(R.id.plotdetalle);
-
+        Poster = vista.findViewById(R.id.imagendetalle);
 
 
 
@@ -66,7 +66,7 @@ public class fragDetalle extends Fragment {
             try {
                 //api key: ef75b81a
                 //declaramos la url como nuestra conexión
-                URL miRuta = new URL("http://www.omdbapi.com/?apikey=ef75b81a&t="+texto+"&plot=full");
+                URL miRuta = new URL("http://www.omdbapi.com/?apikey=ef75b81a&t="+texto+"&plot=short");
                 Log.d("Conexion", "Me voy a conectar");
 
 
